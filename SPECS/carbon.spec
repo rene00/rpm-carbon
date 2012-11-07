@@ -45,7 +45,7 @@ data collection, caching, and persistence services.
 %install
 rm -rf %{buildroot}
 
-%{__python} setup.py install --root=%{buildroot}
+%{__python} setup.py install --root=%{buildroot} --optimize=1
 
 install -d -m 0755 %{buildroot}%{_sysconfdir}/logrotate.d
 install -d -m 0755 %{buildroot}%{_initrddir}
