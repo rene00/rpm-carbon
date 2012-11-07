@@ -3,6 +3,7 @@
 %define python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; import sys; sys.stdout.write(get_python_lib(1))")
 %define python_version  %(%{__python} -c "import sys; sys.stdout.write(sys.version[:3])")
 %endif
+%{expand: %%define pyver %(python -c 'import sys;print(sys.version[0:3])')}
 
 Summary:    Backend data caching and persistence daemon for Graphite
 Name:       carbon
